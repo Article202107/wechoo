@@ -1,0 +1,42 @@
+@import "config/_variables.scss";
+@import "config/reset.css";
+
+@import "pages/home.scss";
+@import "pages/auth.scss";
+@import "pages/profile.scss";
+
+@import "partials/header.scss";
+@import "partials/footer.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $grey;
+}
+
+%button-parent {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+%input-parent {
+  border: 1px solid $dark-grey;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+%input-parent-hover {
+  border: 1px solid $black;
+}
+
+%input-parent-focus {
+  outline: 0;
+  border: 2px solid $sky-blue;
+}

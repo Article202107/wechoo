@@ -1,0 +1,73 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0px 30px;
+
+  .login-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 2em;
+    color: $black;
+  }
+
+  .signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .signin-form__email,
+    .signin-form__password {
+      @extend %input-parent;
+      margin-bottom: 10px;
+      width: 100%;
+
+      &:hover {
+        @extend %input-parent-hover;
+      }
+      &:focus {
+        @extend %input-parent-focus;
+      }
+    }
+
+    .signin-form__submit {
+      @extend %button-parent;
+      background-color: $sky-blue;
+      color: white;
+      margin-top: 10px;
+    }
+  }
+
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+
+    button {
+      @extend %button-parent;
+      color: white;
+      margin: 5px 0px;
+    }
+    .social-login__google {
+      background-color: $red;
+    }
+    .social-login__github {
+      background-color: $black;
+    }
+  }
+
+  .toggle-account {
+    display: inline-block;
+    width: 100%;
+    margin: 10px;
+    color: blue;
+    text-align: right;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
