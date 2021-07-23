@@ -62,7 +62,7 @@ const Auth = () => {
 
   return (
     <div className="main">
-      <h1 className="login-title">LOGIN</h1>
+      <h1 className="login-title">Login</h1>
       <form className="signin-form" onSubmit={onSubmit}>
         <input
           type="text"
@@ -106,7 +106,7 @@ const Auth = () => {
         </button>
       </div>
       <span className="toggle-account" onClick={toggleAccount}>
-        {newAccount ? "Sign In" : "Create Account"}
+        {newAccount ? "로그인" : "회원가입"}
       </span>
     </div>
   );
