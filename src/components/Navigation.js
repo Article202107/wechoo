@@ -8,16 +8,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className='nav-header'>
+    	<div className='nav-center'>
           <Link to="/">Home</Link>
-        </li>
-        <li>
+        </div>
+        <div className='nav-util'>
           <Link to="/profile">Profile</Link>
-        </li>
-      </ul>
-      <input type="button" value="Log Out" onClick={onLogOut} />
+          <input type="button" value="Log Out" onClick={onLogOut} />
+        </div>
     </nav>
   );
 };

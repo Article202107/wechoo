@@ -111,14 +111,14 @@ const Question = ({ questionObj, userObj }) => {
           </form>
         </>
       ) : (
-        <div class='contDiv'>
-	        <div class='compDiv'>
-				<div class='vsLeft'></div>
-				<div class='vsRight'></div>
+        <div className='contDiv'>
+	        <div className='compDiv'>
+				<div className='vsLeft'></div>
+				<div className='vsRight'></div>
 			</div>
-			<div class='txtDiv'>
-				<div class='question'>{questionObj.question}</div>
-				<div class='pickQuest'>
+			<div className='txtDiv'>
+				<div className='question'>{questionObj.question}</div>
+				<div className='pickQuest'>
 					<div>
 						<span>{pickCount.pickCountA}</span>
 						<button onClick={() => onPick("A")}>{questionObj.itemA}</button>
