@@ -111,26 +111,31 @@ const Question = ({ questionObj, userObj }) => {
           </form>
         </>
       ) : (
-        <div>
-          <h4>{questionObj.question}</h4>
-          <div>
-            <div>
-              <span>{pickCount.pickCountA}</span>
-              <button onClick={() => onPick("A")}>{questionObj.itemA}</button>
-            </div>
-            <span> VS </span>
-            <div>
-              <span>{pickCount.pickCountB}</span>
-              <button onClick={() => onPick("B")}>{questionObj.itemB}</button>
-            </div>
-          </div>
-          {isOwner && (
-            <div className="edit-buttons">
-              <button onClick={onDelete}>Delete Question</button>
-              <button onClick={toggleEdit}>Edit Question</button>
-            </div>
-          )}
-        </div>
+        <div class='contDiv'>
+	        <div class='compDiv'>
+				<div class='vsLeft'></div>
+				<div class='vsRight'></div>
+			</div>
+			<div class='txtDiv'>
+				<div class='question'>{questionObj.question}</div>
+				<div class='pickQuest'>
+					<div>
+						<span>{pickCount.pickCountA}</span>
+						<button onClick={() => onPick("A")}>{questionObj.itemA}</button>
+					</div>
+					<div> VS </div>
+					<div>
+					<span>{pickCount.pickCountB}</span>
+		              <button onClick={() => onPick("B")}>{questionObj.itemB}</button>
+					</div>
+				</div>
+				{isOwner && (
+		            <div className="edit-buttons">
+		              <button onClick={onDelete}>Delete Question</button>
+		              <button onClick={toggleEdit}>Edit Question</button>
+		            </div>
+		          )}
+			</div>
       )}
     </>
   );
