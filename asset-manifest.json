@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/wechoo/static/css/main.de6bfe57.chunk.css",
-    "main.js": "/wechoo/static/js/main.7958e66c.chunk.js",
-    "main.js.map": "/wechoo/static/js/main.7958e66c.chunk.js.map",
+    "main.css": "/wechoo/static/css/main.916133e7.chunk.css",
+    "main.js": "/wechoo/static/js/main.f0668ddf.chunk.js",
+    "main.js.map": "/wechoo/static/js/main.f0668ddf.chunk.js.map",
     "runtime-main.js": "/wechoo/static/js/runtime-main.66a1513b.js",
     "runtime-main.js.map": "/wechoo/static/js/runtime-main.66a1513b.js.map",
-    "static/js/2.b43c3013.chunk.js": "/wechoo/static/js/2.b43c3013.chunk.js",
-    "static/js/2.b43c3013.chunk.js.map": "/wechoo/static/js/2.b43c3013.chunk.js.map",
+    "static/js/2.3853dd9d.chunk.js": "/wechoo/static/js/2.3853dd9d.chunk.js",
+    "static/js/2.3853dd9d.chunk.js.map": "/wechoo/static/js/2.3853dd9d.chunk.js.map",
     "index.html": "/wechoo/index.html",
-    "static/css/main.de6bfe57.chunk.css.map": "/wechoo/static/css/main.de6bfe57.chunk.css.map",
-    "static/js/2.b43c3013.chunk.js.LICENSE.txt": "/wechoo/static/js/2.b43c3013.chunk.js.LICENSE.txt"
+    "static/css/main.916133e7.chunk.css.map": "/wechoo/static/css/main.916133e7.chunk.css.map",
+    "static/js/2.3853dd9d.chunk.js.LICENSE.txt": "/wechoo/static/js/2.3853dd9d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.66a1513b.js",
-    "static/js/2.b43c3013.chunk.js",
-    "static/css/main.de6bfe57.chunk.css",
-    "static/js/main.7958e66c.chunk.js"
+    "static/js/2.3853dd9d.chunk.js",
+    "static/css/main.916133e7.chunk.css",
+    "static/js/main.f0668ddf.chunk.js"
   ]
 }
