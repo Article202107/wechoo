@@ -61,7 +61,7 @@ const Auth = () => {
   const toggleAccount = () => setNewAccount(!newAccount);
 
   return (
-    <div className="main">
+    <div className="auth-main main">
       <h1 className="login-title">Login</h1>
       <form className="signin-form" onSubmit={onSubmit}>
         <input

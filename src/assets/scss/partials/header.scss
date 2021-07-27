@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $grey;
+  padding: 10px 20px;
+
+  .header__menu {
+    display: flex;
+    .header__menu-item {
+      margin-right: 10px;
+      a {
+        padding: 5px;
+        text-decoration: none;
+        color: $blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header__logout {
+    width: 80px;
+    padding: 5px;
+    border: none;
+    background-color: skyblue;
+    color: white;
+    border-radius: 10px;
+  }
+}
