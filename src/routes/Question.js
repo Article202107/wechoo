@@ -217,26 +217,35 @@ const Question = ({ questionObj, userObj }) => {
         </>
       ) : (
         <div className="question-card">
-          <h4>{questionObj.question}</h4>
-          <div className="question-card__view">
-            <div className="view__choose-one">
-              <img src={questionObj.imageUrlA} alt="A안 이미지" />
-              <span>{pickCount.pickCountA}</span>
-              <button onClick={() => onPick("A")}>{questionObj.itemA}</button>
+          <span className="question__title">{questionObj.question}</span>
+          <div className="question__items">
+            <div onClick={() => onPick("A")} className="quest-item">
+              <img
+                className="item-image"
+                src={questionObj.imageUrlA}
+                alt="A안 이미지"
+              />
+              <span className="item-count">{pickCount.pickCountA}</span>
+              <span className="item-desc">{questionObj.itemA}</span>
             </div>
-            <span> VS </span>
-            <div className="view__choose-one">
-              <img src={questionObj.imageUrlB} alt="B안 이미지" />
-              <span>{pickCount.pickCountB}</span>
-              <button onClick={() => onPick("B")}>{questionObj.itemB}</button>
+            <div onClick={() => onPick("B")} className="quest-item">
+              <img
+                className="item-image"
+                src={questionObj.imageUrlB}
+                alt="B안 이미지"
+              />
+              <span className="item-count">{pickCount.pickCountB}</span>
+              <span className="item-desc">{questionObj.itemB}</span>
             </div>
           </div>
-          {isOwner && (
-            <div className="owner-edit">
-              <button onClick={onDelete}>Delete Question</button>
-              <button onClick={toggleEdit}>Edit Question</button>
-            </div>
-          )}
+          <div className="question-edit">
+            {isOwner && (
+              <div className="edit-buttons">
+                <button onClick={onDelete}>삭제</button>
+                <button onClick={toggleEdit}>수정</button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </>
