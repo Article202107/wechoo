@@ -160,6 +160,7 @@ const Question = ({ questionObj, userObj }) => {
           <form className="form-question edit" onSubmit={onSubmit}>
             <input
               name="newQuestion"
+              placeholder="Title *"
               onChange={changeQuestion}
               value={newQuestion}
               className="question-title"
@@ -168,15 +169,19 @@ const Question = ({ questionObj, userObj }) => {
             <div className="form-question__select select-items">
               <div className="select-items__input">
                 <input
-                  name="newItemA"
-                  onChange={changeQuestion}
-                  value={newItemA}
                   type="text"
+                  name="newItemA"
+                  className="item__input-text"
+                  placeholder="A안"
+                  value={newItemA}
+                  onChange={changeQuestion}
                 />
                 <input
                   type="file"
                   name="fileA"
+                  className="item__file-attach"
                   accept="image/*"
+                  placeholder="첨부파일1"
                   onChange={onFileChange}
                 />
                 {attachImageA && (
@@ -190,15 +195,19 @@ const Question = ({ questionObj, userObj }) => {
               </div>
               <div className="select-items__input">
                 <input
-                  name="newItemB"
-                  onChange={changeQuestion}
-                  value={newItemB}
                   type="text"
+                  name="newItemB"
+                  className="item__input-text"
+                  placeholder="B안"
+                  value={newItemB}
+                  onChange={changeQuestion}
                 />
                 <input
                   type="file"
                   name="fileB"
+                  className="item__file-attach"
                   accept="image/*"
+                  placeholder="첨부파일2"
                   onChange={onFileChange}
                 />
                 {attachImageB && (

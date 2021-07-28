@@ -63,9 +63,7 @@
 
     .edit-buttons {
       button {
-        border: none;
-        border-radius: 10px;
-        padding: 5px 10px;
+        @extend %button-small;
         background-color: $good-night;
         color: white;
         margin-left: 5px;

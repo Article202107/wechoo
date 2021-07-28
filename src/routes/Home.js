@@ -118,32 +118,40 @@ const Home = ({ userObj }) => {
     fileSelector.value = null;
   };
 
+  const regCancel = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="home-main main">
       <form className="form-question" onSubmit={onSubmit}>
-        <span className="label">Title</span>
         <input
           name="question"
-          placeholder="무엇을 선택하시겠습니까?"
+          placeholder="Title *"
           value={question}
           onChange={onChange}
           className="question-title"
           type="text"
+          required
         />
+        <div className="div-line"></div>
         <div className="form-question__select select-items">
           <div className="select-items__input">
-            <span className="label">선택1</span>
             <input
               type="text"
               name="itemA"
-              placeholder="A안"
+              className="item__input-text"
+              placeholder="선택1 *"
               value={itemA}
               onChange={onChange}
+              required
             />
             <input
               type="file"
               name="fileA"
+              className="item__file-attach"
               accept="image/*"
+              placeholder="첨부파일1"
               onChange={onFileChange}
             />
             {attachImageA && (
@@ -155,19 +163,23 @@ const Home = ({ userObj }) => {
               </div>
             )}
           </div>
+          <div className="div-line"></div>
           <div className="select-items__input">
-            <span className="label">선택1</span>
             <input
               type="text"
               name="itemB"
-              placeholder="B안"
+              className="item__input-text"
+              placeholder="선택2 *"
               value={itemB}
               onChange={onChange}
+              required
             />
             <input
               type="file"
               name="fileB"
+              className="item__file-attach"
               accept="image/*"
+              placeholder="첨부파일2"
               onChange={onFileChange}
             />
             {attachImageB && (
@@ -180,7 +192,12 @@ const Home = ({ userObj }) => {
             )}
           </div>
         </div>
-        <input type="submit" value="question" />
+        <div className="question-buttons">
+          <button className="question-cancel" onClick={regCancel}>
+            취 소
+          </button>
+          <input className="question-submit" type="submit" value="등 록" />
+        </div>
       </form>
       <div>
         {questions.map((question) => (
