@@ -66,11 +66,14 @@ const Question = ({ questionObj, userObj }) => {
   return (
     <>
       {isEditing ? (
-        <QuestionForm
-          userObj={userObj}
-          questionObj={questionObj}
-          toggleEdit={toggleEdit}
-        />
+        <>
+          <div className="div-line"></div>
+          <QuestionForm
+            userObj={userObj}
+            questionObj={questionObj}
+            toggleEdit={toggleEdit}
+          />
+        </>
       ) : (
         <div className="question-card">
           <span className="question__title">{questionObj.question}</span>

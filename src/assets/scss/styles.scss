@@ -10,11 +10,12 @@
 
 @import "mixins/question.scss";
 // @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Stylish&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Stylish&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
 
 * {
   box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: $black;
   //font-family: "Stylish", sans-serif;
 }
@@ -30,6 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 60px;
 }
 
 .main {
