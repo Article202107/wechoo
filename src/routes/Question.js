@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { dbService, storageService } from "fbase";
-import { imageUpload } from "assets/js/common";
+import QuestionForm from "./QuestionForm";
 
 const Question = ({ questionObj, userObj }) => {
   const isOwner = questionObj.creator === userObj.uid;
   const [isEditing, setIsEditing] = useState(false);
-  const [newQuestion, setNewQuestion] = useState("");
-  const [newItemA, setNewItemA] = useState("");
-  const [newItemB, setNewItemB] = useState("");
   const [pickCount, setPickCount] = useState({});
   const [answerList, setAnswerList] = useState([]);
-  const [attachImageA, setAttachImageA] = useState("");
-  const [attachImageB, setAttachImageB] = useState("");
 
   const onDelete = async () => {
     const ok = window.confirm("삭제하시겠습니까?");
@@ -30,31 +25,8 @@ const Question = ({ questionObj, userObj }) => {
     }
   };
 
-  const changeQuestion = (e) => {
-    const {
-      target: { name, value },
-    } = e;
-
-    if (name === "newQuestion") {
-      setNewQuestion(value);
-    } else if (name === "newItemA") {
-      setNewItemA(value);
-    } else if (name === "newItemB") {
-      setNewItemB(value);
-    }
-  };
-
   //
   const toggleEdit = () => {
-    if (!isEditing) {
-      setNewQuestion(questionObj.question);
-      setNewItemA(questionObj.itemA);
-      setNewItemB(questionObj.itemB);
-      setAttachImageA("");
-      setAttachImageB("");
-      document.querySelector("input[name='fileA']").value = null;
-      document.querySelector("input[name='fileB']").value = null;
-    }
     setIsEditing((prev) => !prev);
   };
 
@@ -77,26 +49,6 @@ const Question = ({ questionObj, userObj }) => {
       });
   }, [questionObj.id]);
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-
-    //기존 이미지 삭제
-    await clearImages();
-
-    //이미지 첨부 확인
-    const imageUrlA = await imageUpload(userObj.uid, attachImageA);
-    const imageUrlB = await imageUpload(userObj.uid, attachImageB);
-
-    await dbService.collection("Question").doc(questionObj.id).update({
-      question: newQuestion,
-      itemA: newItemA,
-      itemB: newItemB,
-      imageUrlA,
-      imageUrlB,
-    });
-    toggleEdit();
-  };
-
   const onPick = async (pickCode) => {
     if (answerList.find(({ uid }) => uid === userObj.uid)) {
       alert("이미 선택하셨습니다.");
@@ -111,119 +63,14 @@ const Question = ({ questionObj, userObj }) => {
     });
   };
 
-  const onFileChange = (event) => {
-    const {
-      target: { name, files },
-    } = event;
-    const theFile = files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = (loadFile) => {
-      const {
-        currentTarget: { result },
-      } = loadFile;
-
-      if (name === "fileA") {
-        setAttachImageA(result);
-      } else if (name === "fileB") {
-        setAttachImageB(result);
-      }
-
-      //console.log(attachImageA);
-    };
-
-    reader.readAsDataURL(theFile);
-  };
-
-  const cancelImage = (event) => {
-    event.preventDefault();
-
-    const {
-      target: { name },
-    } = event;
-
-    let fileSelector;
-    if (name === "cancelImageA") {
-      fileSelector = document.querySelector("input[name='fileA']");
-      setAttachImageA(null);
-    } else if (name === "cancelImageB") {
-      fileSelector = document.querySelector("input[name='fileB']");
-      setAttachImageB(null);
-    }
-    fileSelector.value = null;
-  };
-
   return (
     <>
       {isEditing ? (
-        <>
-          <form className="form-question edit" onSubmit={onSubmit}>
-            <input
-              name="newQuestion"
-              placeholder="Title *"
-              onChange={changeQuestion}
-              value={newQuestion}
-              className="question-title"
-              type="text"
-            />
-            <div className="form-question__select select-items">
-              <div className="select-items__input">
-                <input
-                  type="text"
-                  name="newItemA"
-                  className="item__input-text"
-                  placeholder="A안"
-                  value={newItemA}
-                  onChange={changeQuestion}
-                />
-                <input
-                  type="file"
-                  name="fileA"
-                  className="item__file-attach"
-                  accept="image/*"
-                  placeholder="첨부파일1"
-                  onChange={onFileChange}
-                />
-                {attachImageA && (
-                  <div className="preview-image">
-                    <img src={attachImageA} alt="A안 이미지" />
-                    <button name="cancelImageA" onClick={cancelImage}>
-                      Cancel
-                    </button>
-                  </div>
-                )}
-              </div>
-              <div className="select-items__input">
-                <input
-                  type="text"
-                  name="newItemB"
-                  className="item__input-text"
-                  placeholder="B안"
-                  value={newItemB}
-                  onChange={changeQuestion}
-                />
-                <input
-                  type="file"
-                  name="fileB"
-                  className="item__file-attach"
-                  accept="image/*"
-                  placeholder="첨부파일2"
-                  onChange={onFileChange}
-                />
-                {attachImageB && (
-                  <div className="preview-image">
-                    <img src={attachImageB} alt="B안 이미지" />
-                    <button name="cancelImageB" onClick={cancelImage}>
-                      Cancel
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-            <input type="submit" value="Edit" />
-            <button onClick={toggleEdit}>Cancel</button>
-          </form>
-        </>
+        <QuestionForm
+          userObj={userObj}
+          questionObj={questionObj}
+          toggleEdit={toggleEdit}
+        />
       ) : (
         <div className="question-card">
           <span className="question__title">{questionObj.question}</span>

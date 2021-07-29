@@ -1,7 +1,20 @@
+.sub-header {
+  text-align: right;
+  .reg-button__question {
+    @extend %button-small;
+    background-color: $dark-grey;
+    color: white;
+    font-size: 1em;
+    width: 60px;
+  }
+}
+
 .form-question {
+  margin-top: 60px;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px $hint-of-elusive-blue;
+  // display: none;
+  /* border-radius: 10px;
+  box-shadow: 0px 0px 10px $grey; */
 
   .question-title {
     @extend %input-small;
@@ -17,13 +30,8 @@
         width: 100%;
       }
 
-      #file-upload-button {
-        @extend %button-small;
-        background-color: $good-night;
-        color: white;
-      }
       .item__file-attach {
-        background-color: $hint-of-elusive-blue;
+        background-color: $silver;
         padding: 5px 10px;
         width: 100%;
         border-radius: 5px;
@@ -47,7 +55,7 @@
     .question-submit,
     .question-cancel {
       @extend %button-small;
-      background-color: $megaman;
+      background-color: $dark-grey;
       color: white;
       width: 100%;
       text-align: center;

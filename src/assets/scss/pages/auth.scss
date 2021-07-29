@@ -1,4 +1,6 @@
-.auth-main {
+.main.auth-main {
+  padding: 0px 30px;
+
   button {
     @extend %button-parent;
   }
@@ -52,7 +54,7 @@
       @extend %button-parent;
       font-size: 1.2em;
       width: 100%;
-      background-color: $blue;
+      background-color: $dark-grey;
       color: white;
       margin-top: 10px;
     }
@@ -67,12 +69,16 @@
     button {
       color: white;
       margin: 5px 0px;
+
+      .faGoogle {
+        color: white;
+      }
     }
     .social-login__google {
-      background-color: $red;
+      background-color: $dark-grey;
     }
     .social-login__github {
-      background-color: $black;
+      background-color: $dark-grey;
     }
   }
 
@@ -80,7 +86,7 @@
     display: inline-block;
     width: 100%;
     margin: 10px;
-    color: $blue;
+    color: $dark-grey;
     text-align: right;
     &:hover {
       cursor: pointer;

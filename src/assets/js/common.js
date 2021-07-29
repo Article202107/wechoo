@@ -1,4 +1,4 @@
-import { storageService } from "fbase";
+/* import { storageService } from "fbase";
 import { v4 as uuidv4 } from "uuid";
 
 //Firebase Image upload function
@@ -15,3 +15,4 @@ export const imageUpload = async (userId, attachImage) => {
   }
   return downloadUrl;
 };
+ */

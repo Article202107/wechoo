@@ -15,7 +15,7 @@
 * {
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
-  color: $black-pearl;
+  color: $black;
   //font-family: "Stylish", sans-serif;
 }
 
@@ -25,13 +25,19 @@ body {
   justify-content: center;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .main {
-  margin-top: 60px;
-  padding: 20px 30px;
+  max-width: 1080px;
 }
 
 .div-line {
-  border-top: 1px solid $london-square;
+  border-top: 1px solid $grey;
   height: 1px;
   width: 100%;
   margin: 10px 0px;
@@ -57,28 +63,28 @@ body {
 }
 
 %input-parent {
-  border: 1px solid $good-night;
+  border: 1px solid $dark-grey;
   border-radius: 5px;
   padding: 10px;
   font-size: 1em;
 }
 
 %input-small {
-  border: 1px solid $good-night;
+  border: 1px solid $dark-grey;
   border-radius: 5px;
   padding: 5px 10px;
   font-size: 0.8em;
 }
 
 %input-parent-hover {
-  border: 1px solid $black-pearl;
+  border: 1px solid $black;
 }
 
 %input-parent-focus {
   outline: 0;
-  border: 2px solid $sky-blue;
+  border: 2px solid $silver;
 }
 
 %input-small-hover {
-  border: 1px solid $black-pearl;
+  border: 1px solid $black;
 }

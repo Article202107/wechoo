@@ -17,12 +17,9 @@ const Navigation = () => {
           <Link to="/profile">Profile</Link>
         </li>
       </ul>
-      <input
-        type="button"
-        className="header__logout"
-        value="Log Out"
-        onClick={onLogOut}
-      />
+      <span className="header__logout" onClick={onLogOut}>
+        Log Out
+      </span>
     </nav>
   );
 };

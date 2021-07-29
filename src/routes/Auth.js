@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { authService, authInstance } from "fbase";
+import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // import "assets/scss/pages/auth.scss";
 
 const Auth = () => {
@@ -95,6 +98,7 @@ const Auth = () => {
           name="google"
           onClick={goSocialAuth}
         >
+          <FontAwesomeIcon icon={faGoogle} className="faGoogle" />
           Continue with Google
         </button>
         <button
@@ -102,6 +106,7 @@ const Auth = () => {
           name="github"
           onClick={goSocialAuth}
         >
+          <FontAwesomeIcon icon={faGithub} />
           Continue with Github
         </button>
       </div>
