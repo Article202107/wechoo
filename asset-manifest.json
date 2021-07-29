@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wechoo/static/css/main.0c0c04aa.chunk.css",
+    "main.css": "/wechoo/static/css/main.c0a74039.chunk.css",
     "main.js": "/wechoo/static/js/main.511384d0.chunk.js",
     "main.js.map": "/wechoo/static/js/main.511384d0.chunk.js.map",
     "runtime-main.js": "/wechoo/static/js/runtime-main.66a1513b.js",
@@ -8,13 +8,13 @@
     "static/js/2.4d9908e4.chunk.js": "/wechoo/static/js/2.4d9908e4.chunk.js",
     "static/js/2.4d9908e4.chunk.js.map": "/wechoo/static/js/2.4d9908e4.chunk.js.map",
     "index.html": "/wechoo/index.html",
-    "static/css/main.0c0c04aa.chunk.css.map": "/wechoo/static/css/main.0c0c04aa.chunk.css.map",
+    "static/css/main.c0a74039.chunk.css.map": "/wechoo/static/css/main.c0a74039.chunk.css.map",
     "static/js/2.4d9908e4.chunk.js.LICENSE.txt": "/wechoo/static/js/2.4d9908e4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.66a1513b.js",
     "static/js/2.4d9908e4.chunk.js",
-    "static/css/main.0c0c04aa.chunk.css",
+    "static/css/main.c0a74039.chunk.css",
     "static/js/main.511384d0.chunk.js"
   ]
 }
